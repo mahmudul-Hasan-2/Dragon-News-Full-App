@@ -25,8 +25,9 @@ const Navbar = () => {
     },
   ];
 
-  const { data } = useSession();
+  const { data, isPending } = useSession();
   const user = data?.user;
+  console.log(data, isPending);
   return (
     <div className="flex items-center flex-col gap-2 mb-2 sm:flex-row justify-between container mx-auto mt-7.5 px-6">
       <div></div>
@@ -39,7 +40,9 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      {user ? (
+      {isPending ? (
+        <div>Loading...</div>
+      ) : user ? (
         <div className="flex flex-wrap justify-center items-center gap-2">
           <span>Welcome, {user.name}</span>
           <Image

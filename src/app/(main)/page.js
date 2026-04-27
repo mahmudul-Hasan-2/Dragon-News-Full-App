@@ -1,6 +1,9 @@
-import { redirect } from "next/navigation";
+"use client";
+import { useRouter } from "next/navigation";
 const defaultId = "01";
 
 export default function Home() {
-  redirect(`/category/${defaultId}`);
+  const router = useRouter();
+  router.push(`/category/${defaultId}`);
+  router.refresh();
 }
