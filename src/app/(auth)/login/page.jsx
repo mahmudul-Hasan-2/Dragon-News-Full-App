@@ -6,12 +6,6 @@ import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 
-export const metadata = {
-  title: "Login - Dragon News",
-  description:
-    "Login to your Dragon News account to stay updated with the latest news.",
-};
-
 const LoginPage = () => {
   const {
     register,
