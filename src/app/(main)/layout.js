@@ -2,7 +2,12 @@ import Header from "@/Components/Shared/Header";
 import HeadLine from "@/Components/Shared/HeadLine";
 import Navbar from "@/Components/Shared/Navbar";
 
-const layout = ({ children }) => {
+export const metadata = {
+  title: "Dragon News",
+  description: "Stay updated with the latest news from around the world.",
+};
+
+const layout = async ({ children }) => {
   return (
     <div>
       <Header></Header>

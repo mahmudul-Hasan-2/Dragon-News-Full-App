@@ -3,6 +3,15 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+export const generateMetadata = async ({ params }) => {
+  const { id } = await params;
+  const news = await fetchNewsDetailsById(id);
+  return {
+    title: news.title,
+    description: news.details,
+  };
+};
+
 const NewsDetailsPage = async ({ params }) => {
   const { id } = await params;
   const news = await fetchNewsDetailsById(id);

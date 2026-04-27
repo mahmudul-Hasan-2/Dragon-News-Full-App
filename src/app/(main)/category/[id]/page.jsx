@@ -4,8 +4,6 @@ import NewsCard from "@/Components/HomePage/NewsCard";
 import NotFound from "@/Components/HomePage/NotFound";
 import RightSide from "@/Components/HomePage/RightSide";
 import { fetchCategories, fetchNewsById } from "@/lib/AllFetch";
-import { Newspaper, RotateCcw } from "lucide-react";
-import Link from "next/link";
 
 const HomePage = async ({ params }) => {
   const { id } = await params;
