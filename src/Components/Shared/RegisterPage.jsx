@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
@@ -21,8 +20,7 @@ const RegisterPage = () => {
       callbackURL: "/",
     });
     if (res) {
-      router.push("/");
-      router.refresh();
+      redirect("/");
     }
   };
 
@@ -120,7 +118,10 @@ const RegisterPage = () => {
           </div>
 
           <div className="pt-2">
-            <button className="w-full bg-[#403F3F] text-white py-3.5 rounded-md text-lg font-semibold hover:bg-black transition-all active:scale-[0.99]">
+            <button
+              type="submit"
+              className="w-full bg-[#403F3F] text-white py-3.5 rounded-md text-lg font-semibold hover:bg-black transition-all active:scale-[0.99]"
+            >
               Register
             </button>
           </div>

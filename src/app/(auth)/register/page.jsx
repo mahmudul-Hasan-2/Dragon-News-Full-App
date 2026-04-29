@@ -8,11 +8,7 @@ export const metaData = {
 };
 
 const Register = () => {
-  return (
-    <div>
-      <RegisterPage></RegisterPage>
-    </div>
-  );
+  return <RegisterPage></RegisterPage>;
 };
 
 export default Register;

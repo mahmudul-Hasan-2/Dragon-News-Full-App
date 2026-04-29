@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
-import {  useRouter } from "next/navigation";
 import React from "react";
+import { redirect } from "next/navigation";
 
 const LoginPage = () => {
-    const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -18,11 +17,12 @@ const LoginPage = () => {
       email: data.email, // required
       password: data.password, // required
       rememberMe: true,
+      callbackURL: "/",
     });
     if (res) {
-        router.push("/");
-        router.refre
+      redirect("/");
     }
+
     console.log(res, error);
     console.log(errors);
   };
