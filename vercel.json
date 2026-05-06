@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "framework": "nextjs",
+  "rewrites": [
+    {
+      "source": "/api/auth/(.*)",
+      "destination": "/api/auth/$1"
+    }
+  ]
+}
